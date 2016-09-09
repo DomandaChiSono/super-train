@@ -1,5 +1,25 @@
-__author__ = 'student'
-import numpy as np
-x = input ()
-y=  np.log(1+x*x (1/(np.e**(np.sin(x) + 1)))/(5/4 + 1/x**15))
-print(x)
+
+
+import math
+import pylab
+from matplotlib import mlab
+
+tmin = -20.0
+tmax = 20.0
+
+dt = 0.01
+tlist = mlab.frange (tmin, tmax, dt)
+
+pylab.ion()
+
+for n in range (50):
+
+    ylist = [math.cos (2*t) for t in tlist]
+    xlist = [math.sin (t+n/10) for t in tlist]
+    pylab.clf()
+    pylab.plot (xlist, ylist)
+    pylab.draw()
+    pylab.pause(0.3)
+
+
+pylab.close()
